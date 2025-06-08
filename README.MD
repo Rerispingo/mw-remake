@@ -14,10 +14,17 @@ SUDO_USERS= -≥ Lista dos usuários administradores do seu bot. Ex: 123,456
 
 ## Funcionalidades:
 
+**Comandos gerais:**
+
 + **!help** : Exibe todos os comandos.
 + **!roll (Num1) (Num2)** : Retorna um número aleatório entre os dois números informados.
 + **!primes (Num1)** : Retorna todos os números primos de 1 até o número informado.
 + **!primes (Num1) (Num2)** : Retorna todos os números primos entres os dois números informados.
+
+**Comandos de operadores:**
+
++ **!adm add (mention)** : Adiciona um usuário a lista de operadores.
++ **!adm remove (mention)** : Remove um usuário da lista de operadores
 
 
 
