@@ -1,4 +1,13 @@
-# Versão 1.0 do Bot.
+# Versão 1.0.1.2
+
+## Bibliotecas necessárias:
+
++ dotenv
++ discord.js
++ nodemon (opcional)
+
+Execute no seu terminal:  
+npm install dotenv discord.js nodemon
 
 ## Antes de começar:
 

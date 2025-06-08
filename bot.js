@@ -18,7 +18,8 @@ const adm_commands = {
 
 // =========================== .env Configuration ===================================
 const dotenv = await import('dotenv')
-dotenv.config({ path : dotenvPath})  // !!! Change path to the .env archive location !!!
+dotenv.config({ path : dotenvPath})  // !!! Change path to the .env archive location !!!4
+
 
 //================ Bot Configuration ============================
 
