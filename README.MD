@@ -26,9 +26,10 @@ SUDO_USERS= -≥ Lista dos usuários administradores do seu bot. Ex: 123,456
 **Comandos gerais:**
 
 + **!help** : Exibe todos os comandos.
-+ **!roll (Num1) (Num2)** : Retorna um número aleatório entre os dois números informados.
-+ **!primes (Num1)** : Retorna todos os números primos de 1 até o número informado.
-+ **!primes (Num1) (Num2)** : Retorna todos os números primos entres os dois números informados.
++ **!roll (Num1) (Num2)** : Mostra um número aleatório entre os dois números informados.
++ **!primes (Num1)** : Mostra todos os números primos de 1 até o número informado.
++ **!primes (Num1) (Num2)** : Mostra todos os números primos entres os dois números informados.
++ **!adm list** : Mostra todos os operadores.
 
 **Comandos de operadores:**
 
@@ -36,11 +37,49 @@ SUDO_USERS= -≥ Lista dos usuários administradores do seu bot. Ex: 123,456
 + **!adm remove (mention)** : Remove um usuário da lista de operadores
 + **!limit (quant)** : Define um limite para a chamada de voz atual (0 p/ remover)
 + **!kick (user)** : Remove o usuário da chamada que ele está.
++ **!rmsg (chance)** : Muda a chance de o bot te responder com uma mensagem aleatória. Ex: 500 -> 1 em 500 de chance.
++ **!clear (quant)** : Apaga as ultimas mensagens do chat.
 
+**Comandos do "Vai dar Namoro":**
+
++ **!vn add (@mention) (Gênero) (*Preferências*)** : Adiciona um usuário à lista de participantes.
++ **!vn remove (@mention)** : Remove um usuário da lista de participantes.
++ **!vn removeAll** : Remove todos os participantes.
++ **!vn list** : Lista todos os participantes/gêneros/preferências.
+
+**Gêneros e preferências:**  
++ homem
++ mulher
++ outro
 
 # Changelog:
 
-## Versiona 1.0.2:
+## **Version 1.1**:
+
+## Implementações:
+
++ Comando !clear : Apaga as ultimas mensagens do chat.
++ Comando !adm list : Lista todos os operadores (categoria 1 e categoria 2).
++ Comando !rmsg : Muda a chance de o bot te responder com uma mensagem aleatória.
++ Chance do bot responder alguem com uma mensagem aleatória (1 em 100 por padrão).
+
+## Sistema Vai dar namoro:
+
+Sistema para auxílio do evento "Vai dar namoro". Comandos:
+
+**Comandos do "Vai dar Namoro":**
+
++ **!vn add (@mention) (Gênero) (*Preferências*)** : Adiciona um usuário à lista de participantes.
++ **!vn remove (@mention)** : Remove um usuário da lista de participantes.
++ **!vn removeAll** : Remove todos os participantes.
++ **!vn list** : Lista todos os participantes/gêneros/preferências.
+
+**Gêneros e preferências:**  
++ homem
++ mulher
++ outro
+
+## **Version 1.0.2**:
 
 ### Implementações:
 
@@ -55,17 +94,17 @@ SUDO_USERS= -≥ Lista dos usuários administradores do seu bot. Ex: 123,456
 + Correção do !adm remove não estar funcionando corretamente.
 
 
-## Version 1.0.1.1 - Version 1.0.1.2:
+## **Version 1.0.1.1 - Version 1.0.1.2**:
 
 + Correção de pequenos bugs
 + Correção README.MD
 
-## Version 1.0.1:
+## **Version 1.0.1**:
 
 + Comandos !primes
 + Comandos !adm
 
-## Version 1.0:
+## **Version 1.0**:
 
 + Estrutura Basica
 + !help
