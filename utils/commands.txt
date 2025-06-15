@@ -1,0 +1,16 @@
+### Comandos gerais:
+
+- **/help** : Lista todos os comandos.
+- **/roll** : Sorteia um numero aleatorio.
+- **/op-list** : Lista todos os operadores do bot atuais do servidor.
+
+### Comandos de operadores:
+
+- **/clear** : Apaga determinada quantidade de mensagens do chat atual.
+- **/limit** : Limita a quantidade de pessoas da chamada atual.
+- **/kick** : Remove um usuario da chamada atual.
+
+### Comandos de super operadores (.env SUDO_USERS):
+
+- **/op-add** : Adiciona um usuario à lista de operadores.
+- **/op-remove** : Remove um usuario da lista de operadores.

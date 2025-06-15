@@ -6,64 +6,70 @@
 + discord.js
 + nodemon (opcional)
 
-Execute no seu terminal:  
 npm install dotenv discord.js nodemon
 
-## Antes de começar:
+## Arquivos necessários não-inclusos:
 
-No início do bot.js, deve hazer duas variáveis: admPath, dotenvPath:
+data.json {}
 
-Para o admPath, deve-se mencionar um arquivo que você criará chamado data.json: '{ "adm" : [] }'.  
-
-Para o dotenvPath, deve-se mencionar um arquivo chamado .env com os seguintes dados:
-
-DISCORD_TOKEN= -≥ Token do seu bot. Ex: '878a9sd_ASDA8as7d'  
-BOT_CLIENT_ID= -≥ ID do perfil do seu bot no discord. Ex: '18927317293'  
-SUDO_USERS= -≥ Lista dos usuários administradores do seu bot. Ex: 123,456
+.env:  
++ DISCORD_TOKEN=  
++ BOT_CLIENT_ID=  
++ SUDO_USERS=
 
 ## Funcionalidades:
 
-**Comandos gerais:**
+### Comandos gerais:
 
-+ **!help** : Exibe todos os comandos.
-+ **!roll (Num1) (Num2)** : Mostra um número aleatório entre os dois números informados.
-+ **!primes (Num1)** : Mostra todos os números primos de 1 até o número informado.
-+ **!primes (Num1) (Num2)** : Mostra todos os números primos entres os dois números informados.
-+ **!adm list** : Mostra todos os operadores.
++ **/help** : Lista todos os comandos.
++ **/roll** : Sorteia um numero aleatorio.
++ **/op-list** : Lista todos os operadores do bot atuais do servidor.
 
-**Comandos de operadores:**
+### Comandos de operadores:
 
-+ **!adm add (mention)** : Adiciona um usuário a lista de operadores.
-+ **!adm remove (mention)** : Remove um usuário da lista de operadores
-+ **!limit (quant)** : Define um limite para a chamada de voz atual (0 p/ remover)
-+ **!kick (user)** : Remove o usuário da chamada que ele está.
-+ **!rmsg (chance)** : Muda a chance de o bot te responder com uma mensagem aleatória. Ex: 500 -> 1 em 500 de chance.
-+ **!clear (quant)** : Apaga as ultimas mensagens do chat.
++ **/clear** : Apaga determinada quantidade de mensagens do chat atual.
++ **/limit** : Limita a quantidade de pessoas da chamada atual.
++ **/kick** : Remove um usuario da chamada atual.
 
-**Comandos do "Vai dar Namoro":**
+### Comandos de super operadores (.env SUDO_USERS):
 
-+ **!vn add (@mention) (Gênero) (*Preferências*)** : Adiciona um usuário à lista de participantes.
-+ **!vn remove (@mention)** : Remove um usuário da lista de participantes.
-+ **!vn removeAll** : Remove todos os participantes.
-+ **!vn list** : Lista todos os participantes/gêneros/preferências.
-
-**Gêneros e preferências:**  
-+ homem
-+ mulher
-+ outro
++ **/op-add** : Adiciona um usuario à lista de operadores.
++ **/op-remove** : Remove um usuario da lista de operadores.
 
 # Changelog:
 
+## **Version 1.2**:
+
++ Mudança para SlashCommands (/) da api do Discord. Obs: Alguns comandos foram removidos temporariamente.
+
+### Comandos gerais:
+
++ **/help** : Lista todos os comandos.
++ **/roll** : Sorteia um numero aleatorio.
++ **/op-list** : Lista todos os operadores do bot atuais do servidor.
+
+### Comandos de operadores:
+
++ **/clear** : Apaga determinada quantidade de mensagens do chat atual.
++ **/limit** : Limita a quantidade de pessoas da chamada atual.
++ **/kick** : Remove um usuario da chamada atual.
+
+### Comandos de super operadores (.env SUDO_USERS):
+
++ **/op-add** : Adiciona um usuario à lista de operadores.
++ **/op-remove** : Remove um usuario da lista de operadores.
+
+
 ## **Version 1.1**:
 
-## Implementações:
+### Implementações:
 
 + Comando !clear : Apaga as ultimas mensagens do chat.
 + Comando !adm list : Lista todos os operadores (categoria 1 e categoria 2).
 + Comando !rmsg : Muda a chance de o bot te responder com uma mensagem aleatória.
 + Chance do bot responder alguem com uma mensagem aleatória (1 em 100 por padrão).
 
-## Sistema Vai dar namoro:
+### Sistema Vai dar namoro:
 
 Sistema para auxílio do evento "Vai dar namoro". Comandos:
 
@@ -73,6 +79,7 @@ Sistema para auxílio do evento "Vai dar namoro". Comandos:
 + **!vn remove (@mention)** : Remove um usuário da lista de participantes.
 + **!vn removeAll** : Remove todos os participantes.
 + **!vn list** : Lista todos os participantes/gêneros/preferências.
++ **!vn par (@mention)** : Sorteia um par para o usuário.
 
 **Gêneros e preferências:**  
 + homem
