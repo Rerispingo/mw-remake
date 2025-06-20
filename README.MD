@@ -24,12 +24,16 @@ data.json {}
 + **/help** : Lista todos os comandos.
 + **/roll** : Sorteia um numero aleatorio.
 + **/op-list** : Lista todos os operadores do bot atuais do servidor.
++ **/msg-private** : Manda uma mensagem anonima no chat.
 
 ### Comandos de operadores:
 
 + **/clear** : Apaga determinada quantidade de mensagens do chat atual.
 + **/limit** : Limita a quantidade de pessoas da chamada atual.
 + **/kick** : Remove um usuario da chamada atual.
++ **/random-chance** : Altera a chance de um usuario receber uma curiosidade do bot.
++ **/seek-add** : Adiciona uma restrição de chat à uma pessoa. Ex: User1 está proibido de dizer arroz.
++ **/seek-remove** : Remove uma restrição de chat de uma pessoa. O parâmetro '.all' removerá todas as restrições do membro. O parâmetro '@all' removerá todas as restrições do servidor.
 
 ### Comandos de super operadores (.env SUDO_USERS):
 
@@ -37,6 +41,22 @@ data.json {}
 + **/op-remove** : Remove um usuario da lista de operadores.
 
 # Changelog:
+
+## **Version 1.2.1**:
+
+Restrições de chat podem ser adicionadas para membros. Caso o membro selecionado digite a restrição registrada, sua mensagem será apagada.  
+
+O bot agora respondera mensagens aleatorias com uma curiosidade.
+
+### Comandos gerais:
+
++ **/msg-private** : Manda uma mensagem anonima no chat.
+
+### Comandos de operadores:
+
++ **/random-chance** : Altera a chance de um usuario receber uma curiosidade do bot.
++ **/seek-add** : Adiciona uma restrição de chat à uma pessoa. Ex: User1 está proibido de dizer arroz.
++ **/seek-remove** : Remove uma restrição de chat de uma pessoa. O parâmetro '.all' removerá todas as restrições do membro. O parâmetro '@all' removerá todas as restrições do servidor.
 
 ## **Version 1.2**:
 

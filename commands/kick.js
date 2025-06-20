@@ -1,4 +1,4 @@
-import { SlashCommandBuilder } from "discord.js";
+import { CategoryChannel, SlashCommandBuilder } from "discord.js";
 import { pathToFileURL } from 'url';
 import { finalPath } from '../paths.js';
 
@@ -15,13 +15,16 @@ export default {
         ),
     
     async execute (interaction) {
-        if (isAdm.isAdm(interaction.member, true)) return await interaction.reply('Nao posso remover esse usuario da chamada.')
+        const user = interaction.options.getMember('user');
+        if (isAdm.isAdm(user, true)) return await interaction.reply('Nao posso remover esse usuario da chamada.');
         if (!isAdm.isAdm(interaction.member)) return await interaction.reply('Voce nao tem permissao para executar esse comando.');
 
-        const user = interaction.options.getMember('user');
-        if (!user.voice.channel) return await interaction.reply('O usuario nao esta em nenhuma chamada no momento');
-
-        user.voice.disconnect();
-        return await interaction.reply(user.displayName + ' foi desconectado com sucesso.');
+        try {
+            user.voice.disconnect();
+            return await interaction.reply(user.displayName + ' foi desconectado com sucesso.');
+        } catch(error) {
+            return await interaction.reply('Nao foi possivel remover o usuario da chamada. Tente novamente.');
+        }
+        
     }
 }
