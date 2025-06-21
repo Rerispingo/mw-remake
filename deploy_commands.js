@@ -32,7 +32,6 @@ for (const file of filesPath) {
     const js = await import(pathToFileURL(jsPath).href);
     commands.push(js.default.data.toJSON());
 }
-console.log(commands);
 
 /*
 const commands = [

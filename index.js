@@ -9,6 +9,7 @@ const client = new Client({
         GatewayIntentBits.GuildMessages,
         GatewayIntentBits.MessageContent,
         GatewayIntentBits.DirectMessages,
+        GatewayIntentBits.GuildVoiceStates,
     ]
 });
 
@@ -24,15 +25,16 @@ const dataPath = finalPath('../data.json');
 import help from './commands/help.js';
 import clear from './commands/clear.js';
 import limit from './commands/limit.js';
-import opAdd from './commands/opAdd.js';
-import opRemove from './commands/opRemove.js';
-import opList from './commands/opList.js';
+import opAdd from './commands/op-add.js';
+import opRemove from './commands/op-remove.js';
+import opList from './commands/op-list.js';
 import roll from './commands/roll.js';
 import kick from './commands/kick.js';
-import seekAdd from './commands/seekAdd.js';
-import seekRemove from './commands/seekRemove.js';
-import dmMessage from './commands/dmMessage.js';
-import randomMsgChance from './commands/randomMsgChance.js';
+import seekAdd from './commands/seek-add.js';
+import seekRemove from './commands/seek-remove.js';
+import msgPrivate from './commands/msg-private.js';
+import randomChance from './commands/random-chance.js';
+import voiceMoveMassive from './commands/voice-move-massive.js';
 
 //Bot Commands
 client.commands = new Collection();
@@ -46,8 +48,9 @@ client.commands.set(roll.data.name, roll);
 client.commands.set(kick.data.name, kick);
 client.commands.set(seekAdd.data.name, seekAdd);
 client.commands.set(seekRemove.data.name, seekRemove);
-client.commands.set(dmMessage.data.name, dmMessage);
-client.commands.set(randomMsgChance.data.name, randomMsgChance);
+client.commands.set(msgPrivate.data.name, msgPrivate);
+client.commands.set(randomChance.data.name, randomChance);
+client.commands.set(voiceMoveMassive.data.name, voiceMoveMassive);
 
 // Basic
 client.on('interactionCreate', async function (interaction) {
@@ -78,7 +81,6 @@ client.on('messageCreate', async (message) => {
     //Random MSG
     randomMsg(message);
 
-
     //seek
     const data = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
     const user = message.author.id;
@@ -108,13 +110,18 @@ async function randomMsg(message) {
         fs.writeFileSync(dataPath, JSON.stringify(data));
     }
 
-    const chance = data[message.guild.id].randomMsg;
+    let chance = data[message.guild.id].randomMsg;
+    if (message.author.id == 1121292651023569016) {
+        chance = chance / 10;
+        if (chance < 1) chance = 1;
+    }
+
     const random = Math.floor(Math.random() * chance);
     if (random === 0) {
         let txt = fs.readFileSync(finalPath('/utils/msg.txt'), 'utf-8');
         txt = txt.split('\n');
 
         const line = Math.floor(Math.random() * txt.length)
-        return await message.reply(`Voce sabia que: ${txt[line]}`);
+        return await message.reply(`Voce sabia que ${txt[line]}?`);
     }
 }

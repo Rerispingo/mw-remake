@@ -7,14 +7,15 @@
 
 ### Comandos de operadores:
 
-- **/clear** : Apaga determinada quantidade de mensagens do chat atual.
-- **/limit** : Limita a quantidade de pessoas da chamada atual.
+- **/limit** : Limita a chamada para a quantidade de pessoas atuais.
 - **/kick** : Remove um usuario da chamada atual.
+- **/voice-move-massive** : Transfere todos os usuarios de uma chamada.
+- **/clear** : Apaga determinada quantidade de mensagens do chat atual.
 - **/random-chance** : Altera a chance de um usuario receber uma curiosidade do bot.
 - **/seek-add** : Adiciona uma restrição de chat à uma pessoa. Ex: User1 está proibido de dizer arroz.
 - **/seek-remove** : Remove uma restrição de chat de uma pessoa. O parâmetro '.all' removerá todas as restrições do membro. O parâmetro '@all' removerá todas as restrições do servidor.
 
-### Comandos de Super operadores:
+### Comandos de super operadores:
 
 - **/op-add** : Adiciona um usuario à lista de operadores.
 - **/op-remove** : Remove um usuario da lista de operadores.

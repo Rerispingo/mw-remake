@@ -28,9 +28,10 @@ data.json {}
 
 ### Comandos de operadores:
 
-+ **/clear** : Apaga determinada quantidade de mensagens do chat atual.
-+ **/limit** : Limita a quantidade de pessoas da chamada atual.
++ **/limit** : Limita a chamada para a quantidade de pessoas atuais.
 + **/kick** : Remove um usuario da chamada atual.
++ **/voice-move-massive** : Transfere todos os usuarios de uma chamada.
++ **/clear** : Apaga determinada quantidade de mensagens do chat atual.
 + **/random-chance** : Altera a chance de um usuario receber uma curiosidade do bot.
 + **/seek-add** : Adiciona uma restrição de chat à uma pessoa. Ex: User1 está proibido de dizer arroz.
 + **/seek-remove** : Remove uma restrição de chat de uma pessoa. O parâmetro '.all' removerá todas as restrições do membro. O parâmetro '@all' removerá todas as restrições do servidor.
@@ -42,21 +43,32 @@ data.json {}
 
 # Changelog:
 
+## **Version 1.2.2**:
+
+### Comandos de operadores:
+
++ **/voicevoice-move-massive** : Transfere todos os usuarios de uma chamada.
+
+### Implementações:
+
+Quando /limit não receber nenhum parâmetro, ele usará a quantidade de usuários como número.
+
 ## **Version 1.2.1**:
-
-Restrições de chat podem ser adicionadas para membros. Caso o membro selecionado digite a restrição registrada, sua mensagem será apagada.  
-
-O bot agora respondera mensagens aleatorias com uma curiosidade.
-
 ### Comandos gerais:
 
 + **/msg-private** : Manda uma mensagem anonima no chat.
 
 ### Comandos de operadores:
-
 + **/random-chance** : Altera a chance de um usuario receber uma curiosidade do bot.
 + **/seek-add** : Adiciona uma restrição de chat à uma pessoa. Ex: User1 está proibido de dizer arroz.
-+ **/seek-remove** : Remove uma restrição de chat de uma pessoa. O parâmetro '.all' removerá todas as restrições do membro. O parâmetro '@all' removerá todas as restrições do servidor.
++ **/seek-remove** : Remove uma restrição de chat de uma pessoa. O parâmetro '.all' removerá todas as restrições do membro. O parâmetro '@all' removerá todas as restrições do servidor.  
+
+### Implementações:
+
+Restrições de chat podem ser adicionadas para membros. Caso o membro selecionado digite a restrição registrada, sua mensagem será apagada.  
+
+O bot agora respondera mensagens aleatorias com uma curiosidade.
+
 
 ## **Version 1.2**:
 

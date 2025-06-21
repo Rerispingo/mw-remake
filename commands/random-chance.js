@@ -22,6 +22,8 @@ export default {
         let data = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
 
         const chance = interaction.options.getInteger('chance');
+        if (chance < 1) { chance = 1 };
+
         data[interaction.guild.id].randomMsg = chance;
         fs.writeFileSync(dataPath, JSON.stringify(data));
 
